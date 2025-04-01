@@ -3,7 +3,7 @@ async function fetchPokemonData(pokemonName) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
     // Validate if pokemonName is in PokeAPI 
     if (!response.ok) {  
-        throw new Error(`Pokemon Not Found: ${pokemonName}`);  // If not in PokeAPI, show error message 
+        throw new Error(`Pokémon Not Found`);  // If not in PokeAPI, show error message 
     }
     const pokemonData = await response.json();
     return pokemonData;
@@ -15,11 +15,14 @@ async function fetchAndDisplayPokemon(pokemonName) {
     pokemonInfoElement.innerHTML = ''; // Clear previous content
 
     try {
-        const pokeData = await fetchPokemonData(pokemonName);
+        const pokeData = await fetchPokemonData(pokemonName); // call pokemonData from pokemonName, form user input
 
+        // Display HTML/BS for Pokemon Data:
+        // Card for Clean Display: Image of Pokemon on top 
+        // Data below, includes Name, Abilities, Base Experience, and Type(s) 
         pokemonInfoElement.innerHTML = `
         <div class="card shadow-md bg-light bg-gradient border text-center">
-            <img class="card-img-top w-50 img-fluid mx-auto d-block" src="${pokeData.sprites.front_default}" alt="${pokeData.name}">
+            <img class="card-img-top w-50 img-fluid mx-auto d-block" src="${pokeData.sprites.front_default}" alt="${pokeData.name}"> 
             <div class="card-body">
                 <h1 class="card-title text-warning">${pokeData.name}</h1>
                 <h4 class="card-title text-primary">Abilities:</h4>
@@ -34,9 +37,9 @@ async function fetchAndDisplayPokemon(pokemonName) {
             </div>
         </div>
         `;
-    } catch (error) {
+    } catch (error) { // catch if pokemon is not found, prints error message 
         console.error("Error fetching Pokémon:", error);
-        pokemonInfoElement.innerHTML = `<p class="text-danger">${error.message}</p>`;
+        pokemonInfoElement.innerHTML = `<p>${error.message}</p>`;
     }
 }
 
