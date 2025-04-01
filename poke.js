@@ -25,15 +25,15 @@ async function fetchAndDisplayPokemon(pokemonName) {
             <img class="card-img-top w-50 img-fluid mx-auto d-block" src="${pokeData.sprites.front_default}" alt="${pokeData.name}"> 
             <div class="card-body">
                 <h1 class="card-title text-warning">${pokeData.name}</h1>
-                <h3 class="card-title text-primary">Abilities:</h3>
-                <ul class="list-group list-group-flush">
-                    ${pokeData.abilities.map(ability => `<li class="list-group-item">${ability.ability.name}</li>`).join('')}
-                </ul>
-                <p class="p-2 mt-2 fs-7">Base Experience: ${pokeData.base_experience}</p>
                 <h3 class="card-title text-primary">Types:</h3>
                 <ul class="list-group list-group-flush">
                     ${pokeData.types.map(type => `<li class="list-group-item">${type.type.name}</li>`).join('')}
                 </ul>
+                <h3 class="card-title text-primary">Abilities:</h3>
+                <ul class="list-group list-group-flush">
+                    ${pokeData.abilities.map(ability => `<li class="list-group-item">${ability.ability.name}</li>`).join('')}
+                </ul>
+                <p class="p-2 mt-2 fs-5">Base Experience: ${pokeData.base_experience}</p>
             </div>
         </div>
         `;

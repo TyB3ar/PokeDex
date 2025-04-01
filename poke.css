@@ -52,6 +52,10 @@ body {
     padding: 5px;
 }
 
+li {
+    text-transform: capitalize;
+}
+
 .card-title {
     font-family: 'Ketchum';
     color: #ffde00;
