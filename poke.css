@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Ketchum';
+    src: url('/Ketchum.zip/Ketchum.otf') format('embedded-opentype');
+}
+
+body {
+    font-family: 'Ketchum';
+    color: #ffde00;
+    -webkit-text-stroke: 0.8px black;
+}
+
+.poke {
+    background-image: url(pics/pokemon-bg.png);
+}
+
+
+.pokedex {
+    font-family: 'Ketchum';
+    color: #ffde00;
+    -webkit-text-stroke: 0.8px black;
+    font-weight: 500;
+}
+
+.search {
+    font-family: 'Ketchum';
+    color: #ffde00;
+    -webkit-text-stroke: 0.8px black;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px #cc0000;
+}
+
+.submit {
+    font-family: 'Ketchum';
+    color: #3B4CCA;
+}
+
+::placeholder {
+    -webkit-text-stroke: 0.5px #3B4CCA;
+}
+
+.pokemon-info {
+    text-align: center;
+}
+
+.start-msg {
+    font-family: 'Ketchum';
+    color: #ffde00;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 1px 1px 2px #cc0000;
+    line-height: 1.6;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.card-title {
+    font-family: 'Ketchum';
+    color: #ffde00;
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 1px 1px 2px #cc0000;
+    text-transform: capitalize;
+    padding: 5px;
+}
+
+.poke-ball {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    padding: 5px;
+}
+
+.pokeBall {
+    width: 200px;
+    height: 200px;
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
